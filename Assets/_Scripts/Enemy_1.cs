@@ -30,7 +30,7 @@ public class Enemy_1 : Enemy {
 
         base.Move();
 
-        print(bndCheck.isOnScreen);
+        //print(bndCheck.isOnScreen);
     }
 
 }
