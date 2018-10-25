@@ -40,13 +40,13 @@ public class Main : MonoBehaviour {
 
     }
 
-	// Use this for initialization
-	void Start () {
-		
+	
+	public void DelayedRestart (float delay) {
+        Invoke("Restart", delay);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	
+	public void Restart () {
+        SceneManager.LoadScene("_Scene_0");
 	}
 }
