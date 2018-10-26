@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour {
     [Header("Set Dynamically")]
     public Rigidbody rigid;
     [SerializeField]
-    privatee WeaponType _type;
+    private WeaponType _type;
 
     public WeaponType type    {
         get        {
@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour {
 
     public void SetType (WeaponType eType)    {
         _type = eType;
-        weaponDefinition def = Main.GetWeaponDeiniftion(_type);
+        WeaponDefinition def = Main.GetWeaponDefinition(_type);
         rend.material.color = def.projectileColor;
     }
 }

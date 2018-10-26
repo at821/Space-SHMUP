@@ -15,7 +15,7 @@ public enum WeaponType{
 [System.Serializable]
 
 public class WeaponDefinition {
-    public WeaponType typ = WeaponType.none;
+    public WeaponType type = WeaponType.none;
     public string letter;
     public Color color = Color.white;
     public GameObject projectilePrefab;
@@ -27,7 +27,7 @@ public class WeaponDefinition {
 }
 
 public class Weapon : MonoBehaviour {
-
+    static public Transform PROJECTILE_ANCHOR;
 	// Use this for initialization
 	void Start () {
 		

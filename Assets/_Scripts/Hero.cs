@@ -37,10 +37,6 @@ public class Hero : MonoBehaviour {
         fireDelegate += TempFire;
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -70,8 +66,8 @@ public class Hero : MonoBehaviour {
         Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
         //rigidB.velocity = Vector3.up * projectileSpeed;
 
-        projectilePrefab proj = projGO.GetComponent<projectilePrefab>();
-        porj.type = WeaponType.blaster;
+        Projectile proj = projGO.GetComponent<Projectile>();
+        proj.type = WeaponType.blaster;
         float tSpeed = Main.GetWeaponDefinition(proj.type).velocity;
         rigidB.velocity = Vector3.up * tSpeed;
 
