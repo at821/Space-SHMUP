@@ -9,7 +9,7 @@ public class Utils : MonoBehaviour {
         Renderer[] rends = go.GetComponentsInChildren<Renderer>();
         List<Material> mats = new List<Material>();
 
-        foreach (renderer rend in rends)        {
+        foreach (Renderer rend in rends)        {
             mats.Add(rend.material);
         }
         return (mats.ToArray());
