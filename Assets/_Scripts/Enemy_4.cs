@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class Enemy_4 : Enemy {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private Vector3 p0, p1;
+    private float timeStart;
+    private float duration = 4;
+
+    void Start()    {
+        p0 = p1 = pos;
+
+        InitMovement();
+    }
+
+    void InitMovement()    {
+        p0 = p1;
+
+        float widMinRad = bndCheck.camWeidth - bndCheck.radius;
+        float hgtMindRad = bndCheck.camHeight - bndCheck.radius;
+
+        p1.x = Random.Range(-widMinRad, widMinRad);
+        p1.y = RandomRange(-hgtMindRad, hgtMindRad);
+
+        timeStart = Time.time;
+    }
+
+
 }
