@@ -75,7 +75,9 @@ public class Enemy : MonoBehaviour {
                     break;
                 }
             health -= Main.GetWeaponDefinition(p.type).damageOnHit;
-                if(health <= 0)                {
+                ShowDamage();
+
+                if (health <= 0)                {
                     if (!notifiedOfDestruction)
                     {
                         Main.S.shipDestroyed(this);
@@ -90,6 +92,8 @@ public class Enemy : MonoBehaviour {
                 print("Enemy hit by non-ProjectileHero: " + otherGO.name);
                 break;
         }
+
+
 
         if (otherGO.tag =="ProjectileHero")        {
             Destroy(otherGO);
