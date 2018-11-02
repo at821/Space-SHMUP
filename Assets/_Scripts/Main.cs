@@ -27,6 +27,8 @@ public class Main : MonoBehaviour {
     private BoundsCheck bndCheck;
 
     public void shipDestroyed(Enemy e)    {
+        Debug.Log("This should spawn a powerup");
+
         if (Random.value <= e.powerUpDropChance)        {
             int ndx = Random.Range(0, powerUpFrequency.Length);
             WeaponType puType = powerUpFrequency[ndx];

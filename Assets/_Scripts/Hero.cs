@@ -39,7 +39,7 @@ public class Hero : MonoBehaviour {
         //fireDelegate += TempFire;
 
         ClearWeapons();
-        weapons[0].SetType(WeaponType.blaster);
+        weapons[0].SetType(WeaponType.spread);
 
     }
 

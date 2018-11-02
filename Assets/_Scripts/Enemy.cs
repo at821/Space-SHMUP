@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour {
     protected BoundsCheck bndCheck;
 
     void Awake()    {
+
+        Debug.Log("enemy woken");
         bndCheck = GetComponent<BoundsCheck>();
 
         materials = Utils.GetAllMaterials(gameObject);
@@ -66,6 +68,7 @@ public class Enemy : MonoBehaviour {
     }
 
     void OnCollisionEnter (Collision coll)    {
+        Debug.Log("in on collision enter");
         GameObject otherGO = coll.gameObject;
         switch (otherGO.tag)        {
             case "PreojectileHero":
@@ -78,8 +81,10 @@ public class Enemy : MonoBehaviour {
                 ShowDamage();
 
                 if (health <= 0)                {
+                    Debug.Log("calling main ship destroyed");
                     if (!notifiedOfDestruction)
                     {
+                        
                         Main.S.shipDestroyed(this);
                     }
                     notifiedOfDestruction = true;

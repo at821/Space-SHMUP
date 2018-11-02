@@ -21,6 +21,7 @@ public class Enemy_4 : Enemy {
     private Vector3 p0, p1;
     private float timeStart;
     private float duration = 4;
+    private float damageDoneTime;
 
     void Start()    {
         p0 = p1 = pos;
@@ -121,7 +122,7 @@ public class Enemy_4 : Enemy {
                 if (prtHit.protectedBy != null)                {
                     foreach (string s in prtHit.protectedBy)                    {
                         if (!Destroyed(s))                        {
-                            Destroyed(other);
+                            Destroy(other);
                             return;
                         }
                     }
@@ -141,9 +142,9 @@ public class Enemy_4 : Enemy {
                 }
                 if (allDestroyed)                {
                     Main.S.shipDestroyed(this);
-                    Destroyed(this.gameObject);
+                    Destroy(this.gameObject);
                 }
-                Destroyed(other);
+                Destroy(other);
                 break;
         }
     }
