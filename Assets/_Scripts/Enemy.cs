@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour {
 
     void Awake()    {
 
-        Debug.Log("enemy woken");
         bndCheck = GetComponent<BoundsCheck>();
 
         materials = Utils.GetAllMaterials(gameObject);
@@ -71,7 +70,7 @@ public class Enemy : MonoBehaviour {
         Debug.Log("in on collision enter");
         GameObject otherGO = coll.gameObject;
         switch (otherGO.tag)        {
-            case "PreojectileHero":
+            case "ProjectileHero":
                 Projectile p = otherGO.GetComponent<Projectile>();
                 if (!bndCheck.isOnScreen)                {
                     Destroy(otherGO);
@@ -94,19 +93,19 @@ public class Enemy : MonoBehaviour {
                 break;
 
             default:
-                print("Enemy hit by non-ProjectileHero: " + otherGO.name);
+                print("Enemy hit by non-ProjectileHero: " + otherGO.tag);
                 break;
         }
 
 
 
-        if (otherGO.tag =="ProjectileHero")        {
+    /*    if (otherGO.tag =="ProjectileHero")        {
             Destroy(otherGO);
             Destroy(gameObject);
         } else        {
             print("Enemy hit by non-ProjectileHero: " + otherGO.name);
         }
-
+*/
     }
 
     void ShowDamage ()    {
